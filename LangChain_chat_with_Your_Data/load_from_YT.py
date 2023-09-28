@@ -4,8 +4,10 @@ from langchain.document_loaders.blob_loaders.youtube_audio import YoutubeAudioLo
 
 url = "https://www.youtube.com/watch?v=1ayaVWdyOik"
 save_dir = "docs/youtube/"
-loader = GenericLoader(YoutubeAudioLoader(
-    [url], save_dir), OpenAIWhisperParser())
+loader = GenericLoader(
+    YoutubeAudioLoader([url], save_dir),
+    OpenAIWhisperParser()
+)
 docs = loader.load()
 
 print(docs[0].page_content[:500])

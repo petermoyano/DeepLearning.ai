@@ -12,7 +12,7 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 
 loader = PyPDFLoader("docs/ReAct_Synergizing_reasoning_and_acting_in_LLMs.pdf")
 
-pages = loader.load()
+pages = loader.load()  # Returns a list of Page objects (document objects)
 print(len(pages))
-page = pages[0]
-print(page.page_content[:500])
+page = pages[8]
+print(page.metadata)
